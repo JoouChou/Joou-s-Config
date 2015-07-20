@@ -1,0 +1,18 @@
+[user]
+	email = luckyjoou@gmail.com
+	name = Joou
+
+
+[alias]
+	a = add
+	ci = commit -m
+	co = checkout
+	d = diff
+	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph
+	pl = pull
+	ph = push
+	sh = statsh
+	st = status
+	s = status -s
+[core]
+	excludesfile = .gitignoreglobal
