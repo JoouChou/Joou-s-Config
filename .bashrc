@@ -58,11 +58,6 @@ if [ "$TERM" != "dumb" ]; then
 	alias ls='_ls'
 fi
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -86,13 +81,18 @@ alias cp='cp -i'
 alias du='du -h --max-depth=1'
 alias h='history | grep'
 alias mv='mv -i'
-#alias rm='_rm'
-#alias rrm='/bin/rm -i'	# real rm
 alias scr='screen -D -R'
 alias tx='tmux attach'
 alias vi='vim'
 alias merry='ssh luckyjoou@merry.ee.ncku.edu.tw'
-#
+
+function cd(){
+	new_directory="$*";
+	if [ $# = 0 ]; then
+		new_directory=${HOME};
+	fi;
+	builtin cd "${new_directory}" && ls
+}
 
 # Personal Aliases
 
