@@ -85,14 +85,21 @@ alias scr='screen -D -R'
 alias tx='tmux attach'
 alias vi='vim'
 alias merry='ssh luckyjoou@merry.ee.ncku.edu.tw'
+alias jump='ssh joou@10.2.10.21'
 
-function cd(){
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias ~='cd ~'
+
+function cd() {
 	new_directory="$*";
 	if [ $# = 0 ]; then
 		new_directory=${HOME};
 	fi;
 	builtin cd "${new_directory}" && ls
 }
+
 
 # Personal Aliases
 
