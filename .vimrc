@@ -15,10 +15,13 @@ if ($TERM == "vt100")
 "        set t_AF=[%?%p1%{8}%<%t3%p1%d%e%p1%{22}%+%d;1%;m
 "        set t_AB=[%?%p1%{8}%<%t4%p1%d%e%p1%{32}%+%d;1%;m
   " xterm-color / screen
-  set t_Co=8
+  set t_Co=256
   set t_AF=[1;3%p1%dm
   set t_AB=[4%p1%dm
 endif
+set t_Co=8
+set t_AF=[1;3%p1%dm
+set t_AB=[4%p1%dm
 if filereadable($VIMRUNTIME . "/vimrc_example.vim")
  so $VIMRUNTIME/vimrc_example.vim
 endif
@@ -108,6 +111,14 @@ nnoremap <silent> >	:wincmd ><CR>
 hi Comment ctermfg = LightMagenta 
 
 :filetype plugin on
+
+
+set cursorline
+hi Normal        guifg=#dcdccc guibg=#1f1f1f           ctermfg=188 ctermbg=234
+hi ColorColumn   guibg=#33332f                         ctermbg=235
+hi CursorLine    guibg=#121212 gui=bold                ctermbg=233 cterm=none
+hi CursorLineNr  guifg=#f2f3bb guibg=#161616           ctermfg=229 ctermbg=233
+
 
 "set ctags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
