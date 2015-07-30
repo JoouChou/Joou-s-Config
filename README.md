@@ -11,5 +11,5 @@
 
 	find . -name "*~" > ToBeClear.sh
 	chmod +x ToBeClear.sh
-	(In vi editor)shift + v && gg = G && shift + j
+	(Add rm, sort multi-lines to one line by "shift j")
 	./ToBeClear.sh

@@ -141,14 +141,6 @@ day=$1; shift
 find . -maxdepth 1 -mtime +${day} $@
 }
 
-function _rm() { 
-while [ $# -ge 1 ]; do
-	mv -f "$1" $HOME/tmp
-	echo "$1 deleted."
-	shift
-done
-}
-
 function rmold() {
 find . -maxdepth 1 -mtime +$1 -exec rm -rf {} \;
 }
