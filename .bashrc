@@ -87,11 +87,13 @@ alias vi='vim'
 alias merry='ssh luckyjoou@merry.ee.ncku.edu.tw'
 alias jump='ssh joou@10.2.10.21'
 alias minicom='sudo minicom -c on'
+alias ptt='ssh ptt.cc -l bbs'
 
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias ~='cd ~'
+alias -='cd $OLDPWD'
 
 function cd() {
 	new_directory="$*";
