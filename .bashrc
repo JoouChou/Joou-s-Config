@@ -93,7 +93,6 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias ~='cd ~'
-alias -='cd $OLDPWD'
 
 function cd() {
 	new_directory="$*";
