@@ -92,7 +92,6 @@ alias ptt='ssh ptt.cc -l bbs'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
-alias ~='cd ~'
 
 function cd() {
 	new_directory="$*";
