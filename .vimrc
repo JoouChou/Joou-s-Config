@@ -81,9 +81,6 @@ let Tlist_Inc_Winwidth = 0
 "let Tlist_Use_Right_Window = 1
 runtime taglist.vim
 
-"set winminheight=0
-"set winminwidth=0
-"runtime bufexplorer.vim
 
 " Diff
 nnoremap <silent> <C-G>	:diffget<CR>
@@ -100,24 +97,21 @@ nnoremap <silent> -	:wincmd -<CR>
 nnoremap <silent> <	:wincmd <<CR>
 nnoremap <silent> >	:wincmd ><CR>
 
-" IDE
-"nnoremap <silent> <F5>	:cwindow<CR>
-"nnoremap <silent> <F6>	:make<CR>
-"nnoremap <silent> <F7>	:TlistUpdate<CR>
-"nnoremap <silent> <F8>	:Tlist<CR>
-"nnoremap <silent> <F9>	:edit .<CR>
-"nnoremap <silent> <F10>	:BufExplorer<CR>
 
 hi Comment ctermfg = LightMagenta 
 
 :filetype plugin on
 
 
+" When scroll, keep the cursor 5 lines from the top and bottom
+" Dw_cyan modifications
 set cursorline
-hi Normal        guifg=#dcdccc guibg=#1f1f1f           ctermfg=188 ctermbg=234
-hi ColorColumn   guibg=#33332f                         ctermbg=235
-hi CursorLine    guibg=#121212 gui=bold                ctermbg=233 cterm=none
-hi CursorLineNr  guifg=#f2f3bb guibg=#161616           ctermfg=229 ctermbg=233
+set scrolloff=5
+hi CursorLine cterm=NONE ctermbg=black guibg=#101520
+hi CursorColumn cterm=NONE ctermbg=black guibg=#101520
+highlight Cursor guifg=black guibg=yellow
+highlight iCursor guifg=black guibg=yellow
+set guicursor+=a:blinkon0
 
 
 "set ctags
