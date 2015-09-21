@@ -35,7 +35,6 @@ set ai			" always set autoindenting on
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 set showmatch
 set nu
-:filetype plugin on
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -55,23 +54,28 @@ nnoremap <silent> -	:wincmd -<CR>
 nnoremap <silent> <	:wincmd <<CR>
 nnoremap <silent> >	:wincmd ><CR>
 
+:filetype plugin on
+
 hi Comment ctermfg = lightblue 
 set cursorline
 set scrolloff=5
 hi CursorLine cterm=NONE ctermbg=236
 hi CursorColumn cterm=NONE ctermbg=236
 
+" Set font bold
+:highlight MyGroup cterm=bold
+:match MyGroup /./
 
-" set ctags
+" Set ctags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-" setting taglist
+" Set taglist
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Auto_Open = 1
 
-" setting syntastic
+" Set syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
