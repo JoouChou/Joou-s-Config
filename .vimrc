@@ -3,38 +3,16 @@ let g:xptemplate_key = '<Tab>'
 
 execute pathogen#infect()
 
-" If no screen, use color term
-if ($TERM == "vt100")
-  " ref: :help color, search for Tera Term Pro settings or ETerm settings
-        " TeraTermPro
-	"set t_Co=16
-	"set t_AB=[%?%p1%{8}%<%t%p1%{40}%+%e%p1%{32}%+5;%;%dm
-	"set t_AF=[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{22}%+1;%;%dm
-	" Eterm
-"        set t_Co=16
-"        set t_AF=[%?%p1%{8}%<%t3%p1%d%e%p1%{22}%+%d;1%;m
-"        set t_AB=[%?%p1%{8}%<%t4%p1%d%e%p1%{32}%+%d;1%;m
-  " xterm-color / screen
-  set t_Co=256
-  set t_AF=[1;3%p1%dm
-  set t_AB=[4%p1%dm
-endif
-set t_Co=8
-set t_AF=[1;3%p1%dm
-set t_AB=[4%p1%dm
-if filereadable($VIMRUNTIME . "/vimrc_example.vim")
- so $VIMRUNTIME/vimrc_example.vim
-endif
-if filereadable($VIMRUNTIME . "/macros/matchit.vim")
- so $VIMRUNTIME/macros/matchit.vim
-endif
-" flist support
-if filereadable("~/vim/flistmaps.vim")
- so ~/vim/flistmaps.vim
-endif
-if filereadable(expand("hints"))
-       au BufNewFile,BufReadPost *.c,*.C,*.cpp,*.CPP,*.cxx  so hints
-endif
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'scrooloose/nerdtree'
+call plug#end()
+
+" Settings for seoul256
+let g:seoul256_background = 233
+colo seoul256
+
 
 syntax on
 set autoindent
@@ -57,30 +35,10 @@ set ai			" always set autoindenting on
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 set showmatch
 set nu
-
-"set background=dark	" another is 'light'
-
-" VIM 6.0, We're using VIM on ntucs? Solaris, my own build
-if version >= 600
-    set nohlsearch
-	" set foldcolumn=2
-    " set foldmethod=syntax
-    set foldmethod=marker
-    set foldlevel=1
-"    set foldtext=/^/=>
-    set encoding=utf-8
-    set fileencodings=big5,utf-8,ucs-bom,latin1
-    set termencoding=utf-8
-else
-    set fileencoding=taiwan
-endif
-au BufNewFile,BufRead *.less set filetype=less
-let Tlist_Sort_Type = "order"
-let Tlist_WinWidth = 30
-let Tlist_Inc_Winwidth = 0
-"let Tlist_Use_Right_Window = 1
-runtime taglist.vim
-
+:filetype plugin on
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
 
 " Diff
 nnoremap <silent> <C-G>	:diffget<CR>
@@ -97,33 +55,23 @@ nnoremap <silent> -	:wincmd -<CR>
 nnoremap <silent> <	:wincmd <<CR>
 nnoremap <silent> >	:wincmd ><CR>
 
-
-hi Comment ctermfg = LightMagenta 
-
-:filetype plugin on
-
-
-" When scroll, keep the cursor 5 lines from the top and bottom
-" Dw_cyan modifications
+hi Comment ctermfg = lightblue 
 set cursorline
 set scrolloff=5
-hi CursorLine cterm=NONE ctermbg=black guibg=#101520
-hi CursorColumn cterm=NONE ctermbg=black guibg=#101520
-highlight Cursor guifg=black guibg=yellow
-highlight iCursor guifg=black guibg=yellow
-set guicursor+=a:blinkon0
+hi CursorLine cterm=NONE ctermbg=236
+hi CursorColumn cterm=NONE ctermbg=236
 
 
-"set ctags
+" set ctags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-"setting taglist
+" setting taglist
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Auto_Open = 1
 
-"setting syntastic
+" setting syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
