@@ -63,8 +63,8 @@ hi CursorLine cterm=NONE ctermbg=236
 hi CursorColumn cterm=NONE ctermbg=236
 
 " Set font bold
-:highlight MyGroup cterm=bold
-:match MyGroup /./
+highlight MyGroup cterm=bold
+match MyGroup /./
 
 " Set ctags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
