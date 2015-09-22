@@ -35,6 +35,7 @@ set ai			" always set autoindenting on
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 set showmatch
 set nu
+set undofile
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
