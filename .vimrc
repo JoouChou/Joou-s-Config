@@ -12,17 +12,19 @@ Plugin 'VundleVim/Vundle.vim'
 
 "---------------------Vundle plugin-list---------------------
 " ---utility
-Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'chusiang/vim-sdcv'
-Plugin 'vimspell'
+" Plugin 'chusiang/vim-sdcv'
+" Plugin 'easymotion/vim-easymotion'
+
+" ---syntax highlight and detection
+Plugin 'scrooloose/syntastic'
 
 " ---file management
 Plugin 'scrooloose/nerdtree'
 
 " ---autocomplete
-Plugin 'vim-scripts/L9'
-Plugin 'othree/vim-autocomplpop'
+" Plugin 'vim-scripts/L9'
+" Plugin 'othree/vim-autocomplpop'
 
 " ---color scheme
 Plugin 'junegunn/seoul256.vim'
@@ -40,18 +42,10 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'majutsushi/tagbar'
 Plugin 'michaeljsmith/vim-indent-object'
-
-" ---syntax highlight and detection
-Plugin 'scrooloose/syntastic'
-
-" ---Python
-Plugin 'klen/python-mode'
-" Plugin 'davidhalter/jedi-vim'
-" Plugin 'd11wtq/tomorrow-theme-vim'
-" Plugin 'tomasr/molokai'
+" Plugin 'tpope/vim-surround'
 
 " ---C/C++
- Plugin 'Lee-W/c.vim'
+" Plugin 'Lee-W/c.vim'
 " Plugin 'vim-jp/cpp-vim'
 " Plugin 'octol/vim-cpp-enhanced-highlight'
 " Plugin 'rhysd/vim-clang-format'
@@ -66,13 +60,12 @@ Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'othree/vim-javascript-syntax'
 Plugin 'mattn/emmet-vim'
-Plugin 'lukaszb/vim-web-indent'
 
 " Jade
-Plugin 'digitaltoad/vim-jade'
+" Plugin 'digitaltoad/vim-jade'
 
 " Stylus
-Plugin 'wavded/vim-stylus'
+" Plugin 'wavded/vim-stylus'
 
 " LiveScript
 " Plugin 'gkz/vim-ls'
@@ -122,9 +115,9 @@ set bs=2		" allow backspacing over everything in insert mode
 set ai			" always set autoindenting on
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 set showmatch
-set history=50              "保留 50 個使用過的指令
+set history=50              
 set t_Co=256                "Explicitly tell Vim that the terminal supports 256 colors
-set ruler                   "顯示最後一行的狀態
+set ruler                   "Show the status of lastline
 set laststatus=2   " Always show the statusline
 set undofile   " Maintain undo history between sessions "
 
@@ -157,9 +150,6 @@ hi CursorColumn cterm=NONE ctermbg=236
 "
 " sdcv on word
 " nmap <F3> :call SearchWord()<CR>
-"
-" Open spell checking
-" nmap <F7> :setlocal spell!<cr>
 "
 " Close syntax checking
 " nmap <F8> :SyntasticToggleMode<CR>
@@ -197,10 +187,6 @@ let g:xptemplate_key = '<Tab>'
 " --- vim-gitgutter
 let g:gitgutter_enabled = 1
 highlight clear SignColumn " For the same appearance as your line number column "
-
-" --- vim-spell
-set spelllang=en
-"autocmd BufRead *.txt,*.md,*.tex setlocal spell
 
 " --- syntastic
 set statusline+=%#warningmsg#
@@ -308,7 +294,6 @@ endif
 
 "git commit
 autocmd Filetype gitcommit setlocal spell textwidth=72
-
 
 
 " vi:sw=4:ts=4
