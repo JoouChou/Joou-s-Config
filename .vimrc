@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 "---------------------Vundle plugin-list---------------------
 " ---utility
 Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'chusiang/vim-sdcv'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'easymotion/vim-easymotion'
 
 " ---syntax highlight and detection
@@ -23,8 +23,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 
 " ---autocomplete
-" Plugin 'vim-scripts/L9'
-" Plugin 'othree/vim-autocomplpop'
+Plugin 'vim-scripts/L9'
+Plugin 'othree/vim-autocomplpop'
 
 " ---color scheme
 Plugin 'junegunn/seoul256.vim'
@@ -56,10 +56,10 @@ Plugin 'michaeljsmith/vim-indent-object'
 " Plugin 'tfnico/vim-gradle'
 
 "  Web
-Plugin 'othree/html5.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'othree/vim-javascript-syntax'
-Plugin 'mattn/emmet-vim'
+" Plugin 'othree/html5.vim'
+" Plugin 'hail2u/vim-css3-syntax'
+" Plugin 'othree/vim-javascript-syntax'
+" Plugin 'mattn/emmet-vim'
 
 " Jade
 " Plugin 'digitaltoad/vim-jade'
@@ -148,14 +148,11 @@ hi CursorColumn cterm=NONE ctermbg=236
 " Open NERDTree
 " nmap <F2> :NERDTreeToggle<CR>
 "
-" sdcv on word
-" nmap <F3> :call SearchWord()<CR>
-"
 " Close syntax checking
 " nmap <F8> :SyntasticToggleMode<CR>
 "
 " Open tagbar
-" nmap <F10> :TagbarToggle<CR>
+nmap <F10> :TagbarToggle<CR>
 "
 " comment lines
 " map ` :TComment<cr>
@@ -233,12 +230,6 @@ let g:rainbow_active = 1
     \       'css': 0,
     \   }
     \}
-
-" --- setting taglist
-let Tlist_Show_One_File = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Auto_Open = 1
 
 " ---neocomplcache
 let g:neocomplcache_enable_at_startup = 1
