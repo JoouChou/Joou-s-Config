@@ -159,7 +159,7 @@ nmap <F10> :TagbarToggle<CR>
 " vmap ` :TComment<cr>gv
 "
 " set ctags
-" map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Diff
 nnoremap <silent> <C-G>	:diffget<CR>
