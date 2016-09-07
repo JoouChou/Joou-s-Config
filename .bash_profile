@@ -79,6 +79,7 @@ export PATH="$PATH:$HOME/bin:$HOME/.aspera/connect/bin"
 
 alias cls='clear'
 alias cp='cp -i'
+alias cd='_cd'
 alias du='du -h --max-depth=1'
 alias h='history | grep'
 alias mv='mv -i'
@@ -97,7 +98,7 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
-function cd() {
+function _cd() {
 	new_directory="$*";
 	if [ $# = 0 ]; then
 		new_directory=${HOME};
