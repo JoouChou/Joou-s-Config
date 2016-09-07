@@ -1,5 +1,5 @@
 [user]
-	email = luckyjoou@gmail.com
+	email = kuangyu.zky@alibaba-inc.com
 	name = Joou
 
 
@@ -8,7 +8,7 @@
 	ci = commit -m
 	co = checkout
 	d = diff
-	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short --graph
+	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=format:'%Y-%m-%d %H:%M:%S' --graph
 	pl = pull
 	ph = push
 	sh = statsh
