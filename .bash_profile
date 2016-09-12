@@ -71,9 +71,10 @@ fi
 
 export EDITOR=vi
 export GDFONTPATH="$HOME/share/fonts"
-export LANG=zh_TW.UTF-8
+export LANG=zh_CN.UTF-8
 export LC_TIME=en_US.utf8
 export PATH="$PATH:$HOME/bin:$HOME/.aspera/connect/bin"
+export CLICOLOR=true
 
 # Standard Aliases
 
@@ -90,6 +91,8 @@ alias merry='ssh luckyjoou@merry.ee.ncku.edu.tw'
 alias jump='ssh joou@10.2.10.21'
 alias minicom='sudo minicom -c on'
 alias ptt='ssh bbs@ptt.cc'
+alias rm='_rm'
+alias rrm='/bin/rm -i'	# real rm
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
@@ -106,6 +109,13 @@ function _cd() {
 	builtin cd "${new_directory}" && ls
 }
 
+function _rm() { 
+ while [ $# -ge 1 ]; do
+ 	mv -f "$1" $HOME/tmp
+ 	echo "$1 deleted."
+ 	shift
+ done
+}
 
 # Personal Aliases
 
