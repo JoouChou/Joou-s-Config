@@ -1,0 +1,13 @@
+build/
+test/
+demo/
+data/
+bin/
+src/statistics/
+
+coverage/
+
+node_modules/
+
+**/*.min.js
+**/*-min.js
